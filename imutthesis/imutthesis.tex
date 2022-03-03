@@ -1,0 +1,434 @@
+\documentclass{imutthesis}
+%-----   页眉   -----
+\yemei{内蒙古工业大学本科毕业论文\LaTeX 模板(非官方)} %内蒙古工业大学本科毕业设计说明书
+\renewcommand{\headrulewidth}{0.5pt} %要求中为5mm，那样做太难看了
+%-----   封面信息   -----
+\studentid{201800000000}
+\lwleixing{\ziju{0.1pt}本科毕业论文 }%本科毕业设计说明书 % ‘\ziju{距离} ’ 改变间距
+\title{小型风力发电充放电控制系统设计}
+\name{\LaTeX er }
+\xueyuan{电力学院}
+\xibie{自动化系}
+\profession{自动化}
+\class{自18 \rule[0.15cm]{0.3cm}{1.5pt} 2}%这样做美观，也可以直接输入‘ - ’
+\teacher{某某教授}
+\nian{二〇二二}
+\yue{三}
+
+\begin{document}
+
+\maketitle   %封面页
+
+\begin{cnabstract}
+	这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要这是中文摘要。
+	
+	\cnkeywords{关键字1;关键字2；关键字3}
+	
+\end{cnabstract}
+
+\begin{enabstract}
+	This is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstractThis is an English abstract
+	
+	\enkeywords{keyword1;keyword2; keyword3}
+	
+\end{enabstract}
+\tableofcontents    %目录
+\listoffigures     %图目录
+\listoftables      %表目录
+
+\begin{introduction}
+	此模板的出现是因为作者大三期间用  \LaTeX 写了许多实验报告，设计说明书等，格式要求与
+“\href{http://jwch.imut.edu.cn/jwzx/infoSingleArticle.do?articleId=10889&columnId=}{内蒙古工业大学本科生毕业设计说明书(论文)撰写规范(修订)}”基本相同。故在家编写了一个模板(非官方),以方便后续使用。
+
+由于作者水平有限，一些命令或环境的使用不是很熟练，模板在使用过程中可能会遇到bug，可以联系邮箱\url{fanchao11429@163.com}一起解决。本模板已放到\href{https://github.com/Struggle-best/IMUT_thesis}{GitHub}。
+\vspace{3cm}
+
+{\bfseries \color{red}\zihao{-2}可能第一次编译会报错\footnote{没有参考文献辅助文件}，无视它，再编译一次即可！}
+\end{introduction}
+
+\chapter{介绍}
+
+测试环境\TeX Live2021 + Win10
+
+编译方式Xe\LaTeX
+
+{\color{red}建议用户在有一定的 \LaTeX 的使用经验下使用该模板}
+
+\section{文件说明\label{sec:sample}}
+\begin{itemize}
+	     \item \textbf{figure：}存放论文中需要插入的图片
+		\item \textbf{imutthesis.tex：}为论文内容。{\color{red}\textbf{在这里编辑论文。}}
+		\item \textbf{imutthesis.pdf：}{\color{red}\textbf{最终论文。}}
+		\item 文档中其他文件为辅助文件，每次编译都会生成。
+\end{itemize}
+
+\section{已加载的宏包}
+\begin{table}[H]
+	\centering
+	\caption{宏包目录}	
+		\setlength{\tabcolsep}{5mm}{
+		\begin{tabular}{cccccc} 
+			\toprule 
+			ctex&caption &  subfigure    &  fancyhdr  &    gbt7714   &   xeCJK         \\ 
+			\midrule 
+			graphicx	& hyperref &  float   &   bm   &  amsmath & amssymb\\ 
+			\midrule
+			amstext	& booktabs&  titletoc &  listings   &  subfigure &longtable   \\ 
+			\midrule
+			chemfig	& appendix &  tabularx&  tikz& geometry &mhchem \\ 
+			\midrule
+			xcolor& tcolorbox& xparse&zhlipsum &enumitem & \\
+			\bottomrule 
+		\end{tabular}
+	}
+\end{table}
+如果需要更改一些宏包设置可以去根目录下的\textbf{imutthesis.cls}文档中修改，大部分情况无需修改。需要用到新的宏包，直接在导言区用 \myverb{\usepackage{...}} 命令加载即可。
+
+\chapter{环境测试}
+
+\section{图}
+直接将图片\footnote{建议使用矢量图，如画图软件一般导出的pdf格式图片}放入\textbf{figure}文件夹下即可。
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.4]{example-image}
+	\caption{长标题测试。这是个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的标题}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\subfigure[image1]{
+		\includegraphics[width=3cm]{example-image}
+	}
+	\quad
+	\subfigure[image2]{
+		\includegraphics[width=3cm]{example-image}
+	}
+	\quad
+	\subfigure[image3]{
+		\includegraphics[width=3cm]{example-image}
+	}
+	\quad
+	\subfigure[image4]{
+		\includegraphics[width=3cm]{example-image}
+	}
+	\caption{example-image}
+\end{figure}
+
+\section{表}
+论文中表格一般用三线表，见\ref{tab:1}表。如果有其他的表格需求\footnote{推荐俩个表格工具或网站\begin{itemize}
+		\item \textbf{\href{https://www.ctan.org/tex-archive/support/excel2latex/}{Excel 2\LaTeX}\;：
+		}Excel插件，可以将Excel表格转化为\LaTeX 代码
+		\item \textbf{\href{www.tablesgenerator.com}{在线表格生成}\;：}在线编辑表格并转化为\LaTeX 代码
+\end{itemize}}请阅读\myverb{tabularx} 与\myverb{tcolorbox}宏包的说明手册。
+
+\begin{table}[H]
+	\centering
+	\caption{跑马灯I/O分配表}\label{tab:1}
+	\setlength{\tabcolsep}{10mm}{
+		\begin{tabular}{cc} 
+			\toprule 
+			输入& 输出                           \\ 
+			\midrule 
+			$ SB_{0} $\qquad I0.0& $ D_{1} $灯 \qquad Q0.0    \\ 
+			$ SB_{1} $\qquad I0.1& $ D_{2} $灯 \qquad Q0.1    \\ 
+			& $ D_{3} $灯 \qquad Q0.2    \\ 
+			& $ D_{4} $灯 \qquad Q0.3    \\ 
+			& $ D_{5} $灯 \qquad Q0.4    \\ 
+			\bottomrule 
+		\end{tabular}
+	}
+\end{table}
+
+
+\section{数学公式}
+
+行内公式通过代码\myverb{$ ... $} 实现。为了美观，建议文中所有数学形式都加行间数学模式。
+
+不带编号的行间公式可通过代码\myverb{\[  ...  \]}  实现。
+
+带编号的行间公式可通过以下代码实现。
+\begin{lstlisting}
+	\begin{equation}
+		...
+	\end{equation}
+\end{lstlisting} 
+
+这是行内数学公式
+$ 	f(x) = \int_{-\infty}^\infty  \hat f(x)\xi\,e^{2 \pi i \xi x}  \,\mathrm{d}\xi  $。
+
+这是行间数学公式
+\[ \oint_{\Gamma} P \mathrm{~d} x+Q \mathrm{~d} y+R \mathrm{~d} z=\iint_{\sum} 
+\begin{vmatrix}
+	\mathrm{d} y \mathrm{~d} z & \mathrm{~d} z \mathrm{~d} x & \mathrm{~d} x \mathrm{~d} y \\
+	\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+	P & Q & R
+\end{vmatrix} \]
+
+\begin{equation}
+	\oint_{\Gamma} P \mathrm{~d} x+Q \mathrm{~d} y+R \mathrm{~d} z=\iint_{\sum} 
+	\begin{vmatrix}
+		\mathrm{d} y \mathrm{~d} z & \mathrm{~d} z \mathrm{~d} x & \mathrm{~d} x \mathrm{~d} y \\
+		\frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+		P & Q & R
+	\end{vmatrix}
+\end{equation}
+
+
+\section{化学方程式}
+考虑到一些同学需要写化学公式，本模板加载了宏包  \myverb{mhchem} 和 \myverb{chemfig}。 
+
+化学方程式直用\myverb{mhchem}宏包提供的以下代码即可。
+\begin{lstlisting}
+\ce{...}
+\end{lstlisting} 
+\begin{center}
+	\ce{Zn^2+  <=>[+ 2OH-][+ 2H+]  $\underset{\text{这是沉淀}}{\ce{Zn(OH)2 v}}$  <=>[+ 2OH-][+ 2H+]  $\underset{\text{这是离子}}{\ce{[Zn(OH)4]^2-}}$}
+\end{center}
+结构式用\myverb{chemfig}宏包\footnote{该宏包有点复杂，建议用专业软件}提供的功能。
+\begin{center}
+	\chemfig{[:-30]HO--[:30](<[2]OH)-(<:[6]OH)
+		-[:30](<:[2]OH)-(<:[6]OH)-[:30](=[2]O)-H}
+\end{center}
+
+
+\section{一些环境}
+\subsection{代码}
+
+\begin{tcblisting}{colback=yellow!5,colframe=ProcessBlue,listing only,
+		title=文末附录\ref{sec:fulu}中"代码摘录环境"代码, fonttitle=\bfseries,
+		listing options={language=Java,columns=fullflexible,keywordstyle=\color{red}}} 
+\begin{lstlisting}[language=Java] 
+/*冒泡排序算法*/ 
+public static void bubble_sort(int[] arr) {
+int i, j, temp, len = arr.length;
+for (i = 0; i < len - 1; i++)
+for (j = 0; j < len - 1 - i; j++) 
+if (arr[j] > arr[j + 1]) {
+temp = arr[j];
+arr[j] = arr[j + 1];
+arr[j + 1] = temp;
+}
+}
+\end{lstlisting} 
+\end{tcblisting}
+
+\subsection{列表}
+
+
+\subsubsection{有序列表}
+有序列表代码与效果如下：
+
+\begin{minipage}[t]{0.48\textwidth}
+\begin{lstlisting}[language=TeX]
+	\begin{enumerate}
+		\item 
+		\item 
+		\item 
+	\end{enumerate}
+\end{lstlisting} 
+\end{minipage}
+\begin{minipage}[t]{0.48\textwidth}
+	\rule[-10pt]{10cm}{0em}
+	\begin{enumerate}
+		\item 
+		\item 
+		\item 
+	\end{enumerate}
+\end{minipage}
+\subsubsection{无序列表}
+上文\ref{sec:sample} 节中内容的代码实现如下
+
+\begin{lstlisting}[language=TeX]
+\begin{itemize}
+	\item \textbf{figure：}存放论文中需要插入的图片
+	\item \textbf{imutthesis.tex：}为论文内容。{\color{red}\textbf{在这
+	       里编辑论文。}}
+	\item \textbf{imutthesis.pdf：}{\color{red}\textbf{最终论文。}}
+	\item 文档中其他文件为辅助文件，每次编译都会生成。
+\end{itemize}
+\end{lstlisting} 
+
+\section{参考文献}
+当你的参考文献数量少时候你可以去\href{https://www.cnki.net/}{\textbf{中国知网}}、\href{https://xueshu.baidu.com/}{\textbf{百度学术}}，\href{https://scholar.google.com/}{\textbf{GoogleScholar}}等文献库引用复制，然后将其粘贴于参考文献处。在文中引用时处\cite{1,2,3,4,6,8,9,10}用代码\myverb{\cite{...}}即可。
+
+当你参考文献比较多时，复制粘贴工作量大，并且管理起来不是很方便，这时候建议你使用 Bib\TeX 管理你的文献。Bib\TeX 可以去\href{https://www.bilibili.com/}{\textbf{bilibili}}找视频学习。
+\subsection{生僻字}
+引用过程中可能出现某人姓名中有生僻字导致生成的PDF中无法显示这个字,给出我的一个解决方案:
+\subparagraph{插图}将生僻字自己截图，然后插入文中。
+
+eg：{\lower0.4ex\hbox{\includegraphics[width=1.1em]{huaji}}是我造的一个字，代码实现如下
+
+\begin{lstlisting}[language=TeX]
+{\lower0.4ex\hbox{\includegraphics[width=1.1em]{huaji}}是我造的一个字
+\end{lstlisting} 
+\chapter{文档结构介绍}
+\begin{lstlisting}[language=TeX]
+%----------     中文摘要     ----------
+\begin{cnabstract}   
+   ...
+\cnkeywords{...}    %中文关键词	
+\end{cnabstract}
+%----------     英文摘要   ----------
+\begin{enabstract}    
+   ...		
+\enkeywords{...}%英文关键词	
+\end{enabstract}
+%----------     目录     ----------
+\tableofcontents   %目录
+\listoffigures     %图目录
+\listoftables      %表目录
+%----------     引言     ----------
+\begin{introduction}  
+   ...
+\end{introduction}
+%----------     正文     ----------
+\chapter{...}
+\section{...}
+\subsection{...}
+    ....
+%----------     结论     ----------
+\begin{conclusion}
+   ...	
+\end{conclusion}
+%----------     注释     ----------
+\begin{notation}
+	
+\end{notation}    
+%----------     参考文献     ----------
+\begin{thebibliography}{99}
+\bibitem{1} ...
+\bibitem{2} ...
+\bibitem{3} ...
+\end{thebibliography}
+%----------     附录     ----------
+\begin{appendices}
+   ...	
+\end{appendices}
+%----------     谢辞     ----------
+\begin{acknowledgment}
+	
+\end{acknowledgment}
+
+\end{lstlisting} 
+
+
+
+\begin{conclusion}
+\zhlipsum[1-2]	
+
+\end{conclusion}
+
+\begin{notation}
+\lipsum[1-2]
+
+\end{notation}
+
+\begin{thebibliography}{99}
+\addcontentsline{toc}{chapter}{参考文献} %把参考文献加入目录
+\bibitem{1}刘海洋. \LaTeX 入门[J]. 电子工业出版社, 北京, 2013.
+\bibitem{2}lshort-zh-cn.pdf
+\bibitem{3}鲍昕,谭智一,鲍秉坤,徐常胜.基于时空注意力机制的新冠疫情预测模型[J/OL].北京航空航天大学学报:1-11[2022-03-03].DOI:10.13700/j.bh.1001-5965.2021.0535.
+\bibitem{4} 
+\bibitem{5}
+\bibitem{6}
+\bibitem{7}
+\bibitem{8}
+\bibitem{9}
+\bibitem{10}
+\bibitem{11}
+\bibitem{12}
+\bibitem{13}
+\bibitem{14}
+\bibitem{15}
+\bibitem{16}
+\end{thebibliography}
+
+
+
+\begin{appendices}	
+\chapter{附录测试}
+\section{论文无需附录去掉该部分}
+\section{一些测试}
+\subsection{图}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.5]{example-image}
+	\caption{长标题测试。这是个很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长的标题}
+\end{figure}
+\subsection{表格}
+\begin{table}[H]
+	\centering
+	\caption{三线表}
+	\setlength{\tabcolsep}{10mm}{
+		\begin{tabular}{cc} 
+			\toprule 
+			输入& 输出                           \\ 
+			\midrule 
+			$ SB_{0} $\qquad I0.0& $ D_{1} $灯 \qquad Q0.0    \\ 
+			$ SB_{1} $\qquad I0.1& $ D_{2} $灯 \qquad Q0.1    \\ 
+			\bottomrule 
+		\end{tabular}
+	}
+\end{table}
+\subsection{数学公式}
+\[ f(x) = \int_{-\infty}^\infty  \hat f(x)\xi\,e^{2 \pi i \xi x}  \,\mathrm{d}\xi  \]
+
+\begin{equation} 
+	\begin{bmatrix}
+		z_{1}\\
+		z_{2}\\
+		\vdots\\
+		z_{n}
+	\end{bmatrix}
+	=\begin{bmatrix}
+		1 & x_{1}  &x_{1}^{2}  \\
+		1& x_{2} & x_{2}^{2} \\
+		\vdots & \vdots & \vdots\\
+		1 & x_{n} & x_{3}^{2}
+	\end{bmatrix}
+	\begin{bmatrix}
+		a_{1} \\
+		a_{2} \\
+		a_{3} 
+	\end{bmatrix}
+\end{equation}
+
+\begin{equation}
+	y_{n}=y_{max} \times e^{\left (-\frac{(x_{n}-x_{max})^{2}}{Q} \right )}
+\end{equation}
+
+
+
+
+\chapter{冒泡排序算法\label{sec:fulu}}
+
+\begin{lstlisting}[language=Java] 
+/*冒泡排序算法*/ 
+public static void bubble_sort(int[] arr) {
+	int i, j, temp, len = arr.length;
+	for (i = 0; i < len - 1; i++)
+	for (j = 0; j < len - 1 - i; j++) 
+	if (arr[j] > arr[j + 1]) {
+		temp = arr[j];
+		arr[j] = arr[j + 1];
+		arr[j + 1] = temp;
+	}
+}
+\end{lstlisting} 
+
+
+
+	
+\end{appendices}
+
+
+\begin{acknowledgment}
+
+关山难越,谁悲失路之人;萍水相逢,尽是他乡之客
+
+最后愿你毕业顺利！
+\end{acknowledgment}
+
+\end{document}
+
